@@ -26,16 +26,17 @@ class _CarModelCardState extends State<CarModelCard> {
   
   Widget build(BuildContext context) {
  
- 
+
  fcmp=_runFilterCMP();
  myCmp=fcmp.elementAt(0);
+ 
     return InkWell(
       onTap: () {
         Navigator.push(
           context,
           PageRouteBuilder(
             pageBuilder: (context, primaryAnimation, secondaryAnimation) =>
-                DetailsScreen(carModel: widget.carModel,companyModel:myCmp),
+                DetailsScreen(carModel: widget.carModel,companyModel:_runFilterCMP()[0]),
           ),
         );
       },

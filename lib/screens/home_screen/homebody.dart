@@ -9,7 +9,6 @@ import 'package:flycar/size_config.dart';
 import 'package:flutter/material.dart';
 import '../../main.dart';
 import 'car_model_card.dart';
-import 'search_bar.dart';
 import '/api/fetchData.dart';
 import 'package:http/http.dart' as http;
 

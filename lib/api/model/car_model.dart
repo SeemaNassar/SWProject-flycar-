@@ -22,7 +22,8 @@ class CarModel {
   CarModel.fromJson(Map<String, dynamic> map) {
     this.carname = map['carname'];
     this.price = map['price'];
-    this.image=map['carimg'];
+
+    this.image='image/${map['carimg']}';
     //var blob = yourJSONMapHere['yourJSONKeyHere'];
     //this.image = 'assets/images/lambo aventador.png';
     this.year = map['caryear'];

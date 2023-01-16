@@ -122,6 +122,16 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
        backgroundColor: kBgColor,
       body: SingleChildScrollView(
+        child:Container(
+          decoration: new BoxDecoration(
+        gradient: new LinearGradient(
+          colors: [Theme.of(context).accentColor, Theme.of(context).primaryColor],
+          begin: const FractionalOffset(0, 0),
+          end: const FractionalOffset(1.0, 0.0),
+          stops: [0.0, 1.0],
+          tileMode: TileMode.clamp,
+        ),
+      ),
         child: Column(
           children: [
             // Container(
@@ -148,7 +158,8 @@ class _LoginPageState extends State<LoginPage> {
               child: Container(
                   padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                   margin: EdgeInsets.fromLTRB(
-                      20, 10, 20, 10), // This will be the login form
+                      20, 10, 20, 10),
+                      height: 600, // This will be the login form
                   child: Column(
                     children: [
                       Text(
@@ -165,7 +176,7 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Text(
                         'Login into your account',
-                        style: TextStyle(color: Colors.grey),
+                        style: TextStyle(color: Color.fromARGB(255, 203, 220, 229)),
                       ),
                       SizedBox(height: 30.0),
                       Form(
@@ -287,7 +298,7 @@ class _LoginPageState extends State<LoginPage> {
                                 child: Text.rich(TextSpan(children: [
                                   TextSpan(text: "Don\'t have an account? ",   style: TextStyle(
                                        fontSize: 13,
-                                        color: Colors.blueGrey
+                                        color: Color.fromARGB(255, 203, 220, 229)
                                         ,fontFamily: 'halter',
                           package: 'flutter_credit_card',
                         ),),
@@ -316,7 +327,7 @@ class _LoginPageState extends State<LoginPage> {
                   )),
             ),
           ],
-        ),
+        ),),
       ),
     );
   }

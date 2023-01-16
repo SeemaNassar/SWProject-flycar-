@@ -3,19 +3,24 @@ import 'package:flycar/api/model/company_model.dart';
 import 'package:flycar/screens/home_screen/credit_card_page.dart';
 import 'package:flycar/widgets/default_buton.dart';
 import 'package:flutter/material.dart';
-import 'package:flycar/celender.dart';
 import '../../konstants.dart';
 import '../../size_config.dart';
 import 'package:flycar/common/theme_helper.dart';
-import 'package:example/main_rent_Cale.dart';
 
-class Bottom extends StatelessWidget {
+class Bottom extends StatefulWidget {
   final CarModel carModel;
  final CompanyModel companyModel;
   const Bottom({required this.carModel,required this.companyModel});
 
   @override
+  State<Bottom> createState() => _BottomState();
+}
+
+class _BottomState extends State<Bottom> {
+
+  @override
   Widget build(BuildContext context) {
+   
     return Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
@@ -30,7 +35,7 @@ class Bottom extends StatelessWidget {
                           package: 'flutter_credit_card',),
             ),
             Text(
-              '${carModel.price} ₪',
+              '${widget.carModel.price} ₪',
               style: TextStyle(
                   color: kBgColor, fontSize: 18, fontWeight: FontWeight.bold,fontFamily: 'halter',
                      
@@ -40,13 +45,13 @@ class Bottom extends StatelessWidget {
         ),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
           
-          overview(carModel.speed, Icons.speed),
-          overview(carModel.fule,Icons.warning,)
+          overview(widget.carModel.speed, Icons.speed),
+          overview(widget.carModel.fule,Icons.warning,)
        
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          overview(companyModel.location_company, Icons.location_on_rounded),
-          overview(carModel.seats, Icons.chair),
+          overview(widget.companyModel.location_company, Icons.location_on_rounded),
+          overview(widget.carModel.seats, Icons.chair),
         ]),
         //
 
@@ -92,7 +97,7 @@ class Bottom extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => CreditCardPage(carModel: carModel,companyModel:companyModel)));
+                      builder: (context) => CreditCardPage(carModel: widget.carModel,companyModel:widget.companyModel)));
             },
           color: Colors.white,
           shape:

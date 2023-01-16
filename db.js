@@ -78,8 +78,8 @@ app.get("/signup1", function (request, response) {
   console.log(request.query.password);
   ///
 
-  let query1 = `INSERT INTO signup (firstname,lastname,email,mobile_number,password) 
-  VALUES ('${request.query.firstname}','${request.query.lastname}','${request.query.email}','${request.query.mobile_number}','${request.query.password}')`;
+  let query1 = `INSERT INTO signup (firstname,lastname,email,mobile_number,password,wallet) 
+  VALUES ('${request.query.firstname}','${request.query.lastname}','${request.query.email}','${request.query.mobile_number}','${request.query.password}','3000')`;
 
   pool.query(query1, function (error, results) {
     if (error) {

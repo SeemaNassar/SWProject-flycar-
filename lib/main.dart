@@ -16,25 +16,9 @@ Future main() async {
 
  runApp(LoginUiApp());
   prefs = await SharedPreferences.getInstance();
-  //runApp(modi());
+ 
 }
-////
 
-// void main() async {
-  
-
-//   // WidgetsFlutterBinding.ensureInitialized();
-//   // await SystemChrome.setPreferredOrientations([
-//   //   DeviceOrientation.portraitUp,
-//   //   DeviceOrientation.portraitDown,
-//   // ]);
-
-//   // await UserPreferences.init();
-
- 
-
- 
-// }
 
 class LoginUiApp extends StatefulWidget {
   @override
@@ -58,14 +42,9 @@ class _LoginUiAppState extends State<LoginUiApp> {
         scaffoldBackgroundColor: Colors.grey.shade100,
         primarySwatch: Colors.grey,
       ),
-      home: //HomeScreen(),
-      //MyApp(),
+      home: 
       SplashScreen(title: 'FlyCar',),
-      //modi(),
-      //CalendarPage(),
-      //Taxi(),
-      //addBasket(),
-      //MySearchPage(),
+    
     );
   }
 }

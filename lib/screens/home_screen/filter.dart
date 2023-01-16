@@ -11,16 +11,6 @@ import 'package:hexcolor/hexcolor.dart';
 import '/api/fetchData.dart';
 import 'package:http/http.dart' as http;
 import 'homebody.dart';
-//
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flycar/pages/login_page.dart';
-import 'package:flycar/pages/splash_screen.dart';
-import 'package:flycar/pages/widgets/header_widget.dart';
-
-import 'package:flycar/pages/forgot_password_page.dart';
-import 'package:flycar/pages/forgot_password_verification_page.dart';
-import 'package:flycar/pages/registration_page.dart';
 
 late final List<String> company;
 late final List<String> companyname;

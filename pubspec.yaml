@@ -72,8 +72,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  example:
-    path: example/
   # flutter_launcher_icons:
   #   image_path: "assets/images/company.png"
   #   # ios: true
@@ -96,11 +94,11 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   assets:
-    - assets/images/flycar.jpg
     - assets/images/first.jpg
     - assets/images/company.png
     - assets/images/
     - assets/images/taxi.png
+    - image/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

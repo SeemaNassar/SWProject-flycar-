@@ -51,17 +51,34 @@ class _RatingState extends State<Rating> {
   Widget build(BuildContext context) {
     return Scaffold(
        backgroundColor: kBgColor,
-         appBar: AppBar(
-          
-        leading: BackButton(
+        appBar: AppBar(
+      leading: BackButton(
           color: kCyanColor,
         ),
-        backgroundColor: kBgColor,
         elevation: 0,
-
+        iconTheme: IconThemeData(color: Color.fromRGBO(49, 81, 113, 1)),
+        flexibleSpace: Container(
+            decoration: new BoxDecoration(
+        gradient: new LinearGradient(
+          colors: [Theme.of(context).accentColor, Theme.of(context).primaryColor],
+          begin: const FractionalOffset(0, 0),
+          end: const FractionalOffset(1.0, 0.0),
+          stops: [0.0, 1.0],
+          tileMode: TileMode.clamp,
+        ),),
+        ),
       ),
+      
       body: Container(
-        
+            decoration: new BoxDecoration(
+        gradient: new LinearGradient(
+          colors: [Theme.of(context).accentColor, Theme.of(context).primaryColor],
+          begin: const FractionalOffset(0, 0),
+          end: const FractionalOffset(1.0, 0.0),
+          stops: [0.0, 1.0],
+          tileMode: TileMode.clamp,
+        ),
+      ),
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,

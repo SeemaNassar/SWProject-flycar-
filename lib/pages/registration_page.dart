@@ -48,9 +48,7 @@ int w=0;
  
 try{
   //if(w==0){
-       Navigator.of(context).pushAndRemoveUntil(
-            MaterialPageRoute(builder: (context) => LoginPage()),
-            (Route<dynamic> route) => false);
+      
       
       http.Response res = await http.get(
         //192.168.1.55 // 172.19.222.186
@@ -58,8 +56,14 @@ try{
               '&&lastname='+lastname +'&&email=' +email +'&&mobile_number=' +mobile_number +
               '&&password=' +password),
           headers: {'Content-Type': 'application/json'});
+ if (res.statusCode == 200) {
+   
+           Navigator.of(context).pushAndRemoveUntil(
+            MaterialPageRoute(builder: (context) => LoginPage()),
+            (Route<dynamic> route) => false);
   //}
-    } catch (e) {
+    }}
+     catch (e) {
       print("no register");
     }
   }
@@ -72,11 +76,21 @@ try{
       
        backgroundColor: kBgColor,
       body: SingleChildScrollView(
+        child:Container(
+                 decoration: new BoxDecoration(
+        gradient: new LinearGradient(
+          colors: [Theme.of(context).accentColor, Theme.of(context).primaryColor],
+          begin: const FractionalOffset(0, 0),
+          end: const FractionalOffset(1.0, 0.0),
+          stops: [0.0, 1.0],
+          tileMode: TileMode.clamp,
+        ),
+      ),
         child: Column(
           children: [
             Container(
               
-              height: 250,
+              height: 200,
                   // alignment: Alignment.bottomCenter
                 child: Center(
                   child: Container(
@@ -90,13 +104,20 @@ try{
               ),
             ),
             ),
+            
             ),
             
+            
                 ),
+                  Text(
+                        'Creat Your Account',
+                        style: TextStyle(color: Color.fromARGB(255, 203, 220, 229)),
+                      ),
             Container(
               margin: EdgeInsets.fromLTRB(25, 50, 25, 10),
               padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
               alignment: Alignment.topCenter,
+              height: 600,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -316,7 +337,7 @@ try{
               ),
             ),
           ],
-        ),
+        ),),
       ),
      
     );

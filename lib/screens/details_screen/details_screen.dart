@@ -43,11 +43,18 @@ class _DetailsScreenState extends State<DetailsScreen> {
   }
 }
 
-class DetailsBody extends StatelessWidget {
+class DetailsBody extends StatefulWidget {
   final CarModel carModel;
- final CompanyModel companyModel;
+  final CompanyModel companyModel;
   const DetailsBody({required this.carModel,required this.companyModel});
 
+  @override
+  State<DetailsBody> createState() => _DetailsBodyState();
+}
+
+class _DetailsBodyState extends State<DetailsBody> {
+  @override
+ 
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -63,14 +70,14 @@ class DetailsBody extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  carModel.carname,
+                  widget.carModel.carname,
                   style: TextStyle(fontSize: 25,fontFamily: 'halter',
                           color:Color.fromRGBO(49, 81, 113, 1),
                           package: 'flutter_credit_card',),
                 ),
                
                 Text(
-                  carModel.year,
+                  widget.carModel.year,
                   style: TextStyle(fontSize: 18, height: 1.5,fontFamily: 'halter',
                           color:Color.fromRGBO(49, 81, 113, 1),
                           package: 'flutter_credit_card',),
@@ -85,7 +92,7 @@ class DetailsBody extends StatelessWidget {
           flex: 2,
           child: Center(
             child: Image.asset(
-              carModel.image,
+              widget.carModel.image,
               width: getProportionateWidth(350),
             ),
           ),
@@ -103,7 +110,7 @@ class DetailsBody extends StatelessWidget {
                 ),
                 color: kCyanColor),
             child: Bottom(
-              carModel: carModel,companyModel:companyModel,
+              carModel: widget.carModel,companyModel:widget.companyModel,
             ),
           ),
         )
