@@ -50,7 +50,7 @@ class _BottomState extends State<Bottom> {
        
         ]),
         Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          overview(widget.companyModel.location_company, Icons.location_on_rounded),
+          overview(widget.companyModel.location_company.toUpperCase(), Icons.location_on_rounded),
           overview(widget.carModel.seats, Icons.chair),
         ]),
         //

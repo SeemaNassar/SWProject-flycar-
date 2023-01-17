@@ -8,10 +8,17 @@ import 'homebody.dart';
 import 'package:flycar/sharedPrefs.dart';
 import 'package:flycar/pages/splash_screen.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   double  _drawerIconSize = 24;
+
   double _drawerFontSize = 17;
+
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(

@@ -257,6 +257,7 @@ var w= await _runFilter2(_selectedItems);
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
  //list=widget.carModel;
@@ -314,7 +315,7 @@ appBar: AppBar(
        
         //padding: const EdgeInsets.all(20),
         child: Column(
-  mainAxisAlignment: MainAxisAlignment.center,
+  mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
          // crossAxisAlignment:CrossAxisAlignment.stretch,
           children: [
@@ -329,7 +330,8 @@ appBar: AppBar(
            
          
           ),
-               
+            
+         
            
                Container(
                                 decoration:

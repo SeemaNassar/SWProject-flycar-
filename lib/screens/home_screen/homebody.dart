@@ -27,6 +27,7 @@ late List<CarModel> listfilter;
 late var listcarRent;
 late List<CarModel> list1D;
 late List<CompanyModel> allcmp;
+
 late List<CarModel> finalList;
 late List<CarModel> finalListRR;
  late List<int> Dlist;
@@ -37,7 +38,7 @@ late DateTime end;
 String _searchTerm = '';
 
 int fil=0;
-
+late String drop ;
 late String EndSession ;
 late String StartSession;
 late String totalSession;
@@ -51,6 +52,7 @@ late String totalSession;
   StartSession = prefs.get("startdate").toString();
 EndSession = prefs.get("enddate").toString();
 String totalSession = prefs.get("total").toString();
+drop=prefs.get("location").toString();
   
       print("hi1"+StartSession);
          print("hi2"+EndSession);      
@@ -102,7 +104,7 @@ list1D=[];
  totalSession='';
   allcmp=[];
  
-
+drop='';
     super.initState();
   }
 
@@ -360,6 +362,19 @@ Dlist.add(listcarRent.elementAt(i)['carid']);
    
 finalList=removeDuplicate(); //the car is out of range for many times 
   list1=finalList+finalListRR; //out of range and not have any dates
+  if(!drop.contains("Governorate")){
+  
+    List<CarModel> ll=[];
+     List<CompanyModel> c=allcmp.where((element) => element.location_company.toUpperCase().contains(drop.toUpperCase())).toList();
+     for(int m=0;m<c.length;m++){
+      print("++");
+     print(c.elementAt(m).name);
+      ll+=list1.where((element) => element.id.contains(c.elementAt(m).id)).toList();
+      print(ll.toList());
+     }
+     list1=ll;
+     
+     }
     return list1;
 }
 ////////

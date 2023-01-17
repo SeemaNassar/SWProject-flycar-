@@ -15,6 +15,11 @@ class sharedPrefs {
     prefs.setString("wallet", wal);
 
   }
+   static saveLoc(String loc) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString("location", loc);
+
+  }
   static saveDates(String s,String e,String t) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString("startdate", s);
